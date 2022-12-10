@@ -9,6 +9,7 @@ conllu==4.5.2
 contourpy==1.0.6
 cycler==0.11.0
 cymem==2.0.7
+dnspython==2.2.1
 en-ner-bc5cdr-md @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_ner_bc5cdr_md-0.5.1.tar.gz
 en-ner-bionlp13cg-md @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_ner_bionlp13cg_md-0.5.1.tar.gz
 fonttools==4.38.0
@@ -31,6 +32,7 @@ preshed==3.0.8
 psutil==5.9.4
 pybind11==2.6.1
 pydantic==1.10.2
+pymongo==4.3.3
 pyparsing==3.0.9
 pysbd==0.3.4
 python-dateutil==2.8.2

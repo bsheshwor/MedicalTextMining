@@ -41,14 +41,19 @@ def get_common_chemicals(df,x):
 
 def spacy_mine():
     df = text_2df()
-    for i in range(df.shape[0]):
-        x = df['Text'][i]
-        dataofx= CONFIG.nlp_obj(x)
-        df.loc[i,['Disease','Chemicals']] = [str(diseaseExtract(x)),str(chemicalExtract(x))]
+    # for i in range(df.shape[0]):
+    #     x = df['Text'][i]
+    #     dataofx= CONFIG.nlp_obj(x)
+    #     df.loc[i,['Disease','Chemicals']] = [diseaseExtract(x),chemicalExtract(x)]
     
+    df['Disease'] = df['Text'].apply(lambda x:diseaseExtract(x))
+    df['Chemicals'] = df['Text'].apply(lambda x:chemicalExtract(x))
+
     surgery_disease = get_common_disease(df,'Surgery')
     chemicals = get_common_chemicals(df,'Chemicals')
+
     df['Organ'] = df['Text'].apply(lambda x:organExtract(x))
+
 
     return df
 

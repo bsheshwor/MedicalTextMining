@@ -7,6 +7,14 @@ pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/e
 
 
 
-Run python3 main.py
-
+Run:
 The final json file is saved in the data folder.
+
+ python3 main.py
+
+
+Run:
+To save the json data into the database
+
+python3 json2db.py
+
