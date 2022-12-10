@@ -1,10 +1,7 @@
 import os
+import CONFIG
 import pandas as pd
 from bs4 import BeautifulSoup
-
-BASE_DIR = os.getcwd()
-TEMP_DIR = os.path.join(BASE_DIR, "data")
-DATA_DIR = os.path.join(TEMP_DIR,"smokers_surrogate_train_all_version2.xml")
 
 def xml_2text(text_path):
     with open(text_path, 'r') as f:
@@ -15,7 +12,7 @@ def xml_2text(text_path):
     return b_text
 
 def attr_valmap():
-    b_text = xml_2text(DATA_DIR)
+    b_text = xml_2text(CONFIG.DATA_DIR)
     cache = []
     memory = []
     bag_ofwords = []
@@ -52,7 +49,7 @@ def text_2df():
             "PAST MEDICAL HISTORY :","PHYSICAL EXAMINATION :", "LABORATORY DATA :"
             ]
     
-    b_text = xml_2text(DATA_DIR)
+    b_text = xml_2text(CONFIG.DATA_DIR)
     attr_val = attr_valmap()
     temp = []
     indx = []
