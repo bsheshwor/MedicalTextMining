@@ -82,3 +82,5 @@ def spacy_mine():
   plot_cloud(' '.join(genes),'_genes')
   return df
 
+# print(spacy_mine())
+
