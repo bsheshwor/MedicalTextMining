@@ -30,7 +30,7 @@ def organExtract(text):
   return unique(results)
 
 def get_common_disease(df,x):
-  disease_list = df['Disease'].tolist()
+  disease_list = df['Key Disease'].tolist()
   disease_list = [i for j in disease_list for i in j]
   return unique(disease_list)
 
@@ -41,17 +41,20 @@ def plot_disease_cloud(text):
   plt.show()
 
 def get_common_chemicals(df,x):
-  chemical_list = df['Chemicals'].tolist()
+  chemical_list = df['Key Chemicals'].tolist()
   chemical_list = [i for j in chemical_list for i in j]
   return unique(chemical_list)
 
 
 def spacy_mine():
     df = text_2df()
-    df['Disease'] = df['Text'].apply(lambda x:diseaseExtract(x))
-    df['Chemicals'] = df['Text'].apply(lambda x:chemicalExtract(x))
+    df['Key Disease'] = df['Text'].apply(lambda x:diseaseExtract(x))
+    df['Key Chemicals'] = df['Text'].apply(lambda x:chemicalExtract(x))
     surgery_disease = get_common_disease(df,'Surgery')
     chemicals = get_common_chemicals(df,'Chemicals')
-    df['Organ'] = df['Text'].apply(lambda x:organExtract(x))
+    df['Affected Organ'] = df['Text'].apply(lambda x:organExtract(x))
+    df['Past Key Disease'] = df['PAST MEDICAL HISTORY :'].apply(lambda x:diseaseExtract(x))
     return df
+
+# print(spacy_mine())
 

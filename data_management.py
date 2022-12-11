@@ -9,6 +9,8 @@ def xml_2text(text_path):
 
     bs_data = BeautifulSoup(data, 'xml')
     b_text = bs_data.find_all('TEXT')
+    with open(os.path.join(CONFIG.TEMP_DIR,'smoker_text.txt'),'w') as f:
+        f.writelines(str(b_text))
     return b_text
 
 def attr_valmap():
@@ -71,3 +73,5 @@ def text_2df():
     text_df = pd.DataFrame(new_text,columns=["Text"])
     dict_2df = dict_2df.merge(text_df,left_index=True, right_index=True)
     return dict_2df
+
+xml_2text(CONFIG.DATA_DIR)
