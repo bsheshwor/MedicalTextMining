@@ -60,12 +60,3 @@ We have used the MongoDB database to store our data. So, the following things ne
 <a href="https://www.mongodb.com/docs/manual/installation/">Install MongoDB</a>
 <br/>
 <a href="https://www.mongodb.com/docs/compass/current/install/">Download and install compass</a>
-
-
-
-<!-- LICENSE -->
-## License
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
-
