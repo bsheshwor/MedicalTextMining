@@ -6,11 +6,11 @@ from wordcloud import WordCloud
 import CONFIG
 from data_management import text_2df
 
-def plot_cloud(text, num):
+def plot_cloud(text, name):
   mywordcloud = WordCloud().generate(text)
   plt.imshow(mywordcloud, interpolation='bilinear')
   plt.axis('off')
-  plt.savefig(f"clouds/cloud{num}.png")
+  plt.savefig(f"clouds/cloud{name}.png")
 
 def unique(arr_list):
   new_list = []
@@ -76,9 +76,9 @@ def spacy_mine():
   chemicals = get_common_chemicals(df)
   organs = get_common_organ(df)
   genes = get_common_gene(df)
-  plot_cloud(' '.join(surgery_disease),1)
-  plot_cloud(' '.join(chemicals),2)
-  plot_cloud(' '.join(organs),3)
-  plot_cloud(' '.join(genes),4)
+  plot_cloud(' '.join(surgery_disease),'_disease')
+  plot_cloud(' '.join(chemicals),'_chemicals')
+  plot_cloud(' '.join(organs),'_organs')
+  plot_cloud(' '.join(genes),'_genes')
   return df
 
