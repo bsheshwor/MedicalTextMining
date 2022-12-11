@@ -4,21 +4,24 @@ import matplotlib.pyplot as plt
 
 import ast
 
-df = pd.read_csv("data/dataframecsv.csv")
-organ_list = []
+keys_list = ['Key Disease','Key Chemicals','Key Organ','Key Gene']
+def frequency_plot():
 
-for ele in df['Organ'].tolist():
-    organ_list.append(ast.literal_eval(ele))
+    df = pd.read_csv("data/dataframecsv.csv")
+    organ_list = []
 
-organs = []
-for ele in organ_list:
-    for ele0 in ele:
-        organs.append(ele0)
+    for ele in df['Organ'].tolist():
+        organ_list.append(ast.literal_eval(ele))
 
-size = len(organs)
+    organs = []
+    for ele in organ_list:
+        for ele0 in ele:
+            organs.append(ele0)
 
-organ_df = pd.DataFrame(organs, columns=['organ'])
-organ_df = organ_df.groupby(['organ']).size().reset_index(name='frequency')
-organ_df['Percent'] = np.round(organ_df['frequency']*100/size,2)
-print(organ_df)
-ax = organ_df.plot.bar(x='organ', y='Percent', rot=0)
+    size = len(organs)
+
+    organ_df = pd.DataFrame(organs, columns=['organ'])
+    organ_df = organ_df.groupby(['organ']).size().reset_index(name='frequency')
+    organ_df['Percent'] = np.round(organ_df['frequency']*100/size,2)
+
+# ax = organ_df.plot.bar(x='organ', y='Percent', rot=0)
