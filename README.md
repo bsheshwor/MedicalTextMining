@@ -1,7 +1,7 @@
 
 <br />
 <div align="center">
-  <img src="assets/logo.png" alt="Logo" width="80" height="80">
+  <img src="assets/logo.png" alt="Logo" width="100" height="100">
   <h3 align="center">Text Mining on Medical Dataset</h3>
 
   <p align="center">
