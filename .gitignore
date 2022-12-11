@@ -1,3 +1,4 @@
 bin/
 myenv/
+env/
 __pycache__/
